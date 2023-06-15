@@ -1,1 +1,78 @@
-<h1>Welcome to the home page</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stylish Calculator</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        form {
+            display: inline-block;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="number"],
+        select {
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid #dddddd;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333333;
+        }
+
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Stylish Calculator</h1>
+    <form action="/calculate" method="post">
+        <input type="number" name="num1" placeholder="Enter first number" required><br><br>
+        <input type="number" name="num2" placeholder="Enter second number" required><br><br>
+        <select name="operation">
+            <option value="add">Addition</option>
+            <option value="subtract">Subtraction</option>
+            <option value="multiply">Multiplication</option>
+            <option value="divide">Division</option>
+        </select><br><br>
+        <input type="submit" value="Calculate">
+    </form>
+    {% if result %}
+    <h2>Result: <span class="result">{{ result }}</span></h2>
+    {% endif %}
+</body>
+
+</html>
